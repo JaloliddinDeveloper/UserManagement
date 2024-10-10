@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using UserManagement.API.Brokers.Storages;
+using UserManagement.API.Services.Foundations.Users;
 
 public class Program
 {
@@ -16,6 +17,7 @@ public class Program
         builder.Services.AddControllers();
 
         builder.Services.AddTransient<IStorageBroker, StorageBroker>();
+        builder.Services.AddTransient<IUserService,UserService>();
 
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
