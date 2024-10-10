@@ -5,6 +5,7 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using UserManagement.API.Brokers.Storages;
 
 public class Program
 {
@@ -13,6 +14,9 @@ public class Program
         var builder = WebApplication.CreateBuilder(args);
 
         builder.Services.AddControllers();
+
+        builder.Services.AddTransient<IStorageBroker, StorageBroker>();
+
         builder.Services.AddEndpointsApiExplorer();
         builder.Services.AddSwaggerGen();
 
