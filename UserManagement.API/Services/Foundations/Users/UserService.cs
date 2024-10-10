@@ -16,7 +16,7 @@ namespace UserManagement.API.Services.Foundations.Users
         public UserService(IStorageBroker storageBroker)=>
             this.storageBroker = storageBroker;
 
-        public async ValueTask<User> AddUserService(User user)=>
+        public async ValueTask<User> AddUserAsync(User user)=>
             await this.storageBroker.InsertUserAsync(user);
        
         public async ValueTask<IQueryable<User>> RetrieveAllUsers()=>
@@ -25,10 +25,10 @@ namespace UserManagement.API.Services.Foundations.Users
         public async ValueTask<User> RetrieveUserByIdAsync(int userId)=>
             await this.storageBroker.SelectUserByIdAsync(userId);
 
-        public async ValueTask<User> ModifyUserService(User user)=>
+        public async ValueTask<User> ModifyUserAsync(User user)=>
             await this.storageBroker.UpdateUserAsync(user);
 
-        public async ValueTask<User> RemoveUserService(int userId)
+        public async ValueTask<User> RemoveUserAsync(int userId)
         {
             User maybeUser = await this.storageBroker.SelectUserByIdAsync(userId);
 

@@ -17,7 +17,7 @@ namespace UserManagement.API.Brokers.Storages
             await InsertAsync(user);
 
         public async ValueTask<IQueryable<User>> SelectAllUsersAsync() =>
-            await SelectAllUsersAsync();
+            await SelectAllAsync<User>();
 
         public async ValueTask<User> SelectUserByIdAsync(int userId) =>
             await SelectByIdAsync<User>(userId);

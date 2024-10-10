@@ -10,12 +10,11 @@ namespace UserManagement.API.Services.Foundations.Users
 {
     public interface IUserService
     {
-        ValueTask<User> AddUserService(User user);
+        ValueTask<User> AddUserAsync(User user);
         ValueTask<IQueryable<User>> RetrieveAllUsers();
         ValueTask<User> RetrieveUserByIdAsync(int userId);
-        ValueTask<User> ModifyUserService(User user);
-        ValueTask<User> RemoveUserService(int userId);
+        ValueTask<User> ModifyUserAsync(User user);
+        ValueTask<User> RemoveUserAsync(int userId);
         ValueTask<User> RetrieveUserByEmailAsync(string email);
-
     }
 }
