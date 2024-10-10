@@ -32,8 +32,8 @@ namespace UserManagement.API.Brokers.Storages
         private async ValueTask<IQueryable<T>> SelectAllAsync<T>() where T : class =>
             this.Set<T>();
 
-        private async ValueTask<T> SelectByIdAsync<T>(params object[] objectIds) where T : class=>
-           await this.FindAsync<T>(objectIds);  
+        private async ValueTask<T> SelectByIdAsync<T>(params object[] @objectIds) where T : class =>
+           await this.FindAsync<T>(@objectIds);
 
         private async ValueTask<T> UpdateAsync<T>(T @object) where T:class
         {
